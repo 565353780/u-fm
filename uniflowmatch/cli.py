@@ -59,7 +59,11 @@ def launch_demo(args):
 
         # Initialize model
         use_refinement = args.model == "refine"
-        model_loaded = initialize_model(use_refinement=use_refinement)
+        if use_refinement:
+            model_type_choice = "Refinement Model (980x644)"
+        else:
+            model_type_choice = "Base Model (980x644)"
+        model_loaded = initialize_model(model_type_choice)
 
         if not model_loaded:
             print("Error: Failed to load model. Check installation and internet connection.")

@@ -4,8 +4,9 @@ python setup.py install
 cd ..
 pip install numpy matplotlib opencv-python flow_vis \
   huggingface_hub einops gradio timm jaxtyping pillow \
-  scikit-learn black isort pre-commit pytest
+  scikit-learn black isort pre-commit pytest requests
 
 pip install minio rerun-sdk
 
-python setup.py install
+#python setup.py install
+pip install -e ".[all]"
